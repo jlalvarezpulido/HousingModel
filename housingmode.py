@@ -1,38 +1,51 @@
 import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
 
 # Read the dataset
 df = pd.read_csv('Housing.csv')
 
-# Selecting only relevant columns for this example
-df = df[['bedrooms', 'price']]
-
 # Extracting features and target variable
-X = df[['bedrooms']]
-y = df['price']
-
+X = df[["bathrooms","grade","waterfront","sqft_lot","sqft_living", "long", "lat", "bedrooms"]]
+y = df["price"]
 # Splitting data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=17, test_size=0.3)
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=16, test_size =0.3)
 
-# Creating and training the model with feature names
-model = DecisionTreeRegressor()
+model = RandomForestRegressor(max_depth=6,random_state=0, n_estimators=10)
 model.fit(X_train, y_train)
 
-# Function to predict price based on number of bedrooms
-def predict_price(num_bedrooms):
-    # Reshape input to match the model's expectations
-    num_bedrooms = np.array([[num_bedrooms]])
-    # Set feature names of input data to match X_train
-    X_new = pd.DataFrame({'bedrooms': [num_bedrooms]})
-    X_new.columns = X_train.columns
+
+def predict_price(bathrooms, grade, waterfront, sqft_lot, sqft_living, long, lat, bedrooms):
+    userResponse = pd.DataFrame()
+    userResponse['bathrooms'] = [bathrooms]  # 0-8
+    userResponse['grade'] = [grade]#1-13 moves the price drastically
+    userResponse['waterfront'] = [waterfront]#1 or 0
+    userResponse['sqft_lot'] = [sqft_lot]#520 - 1650000
+    userResponse['sqft_living'] = [sqft_living]#290 - 13500
+    userResponse['long'] = [long]
+    userResponse['lat'] = [lat]
+    userResponse['bedrooms'] = [bedrooms]#1-33
     # Predict the price
-    predicted_price = model.predict(X_new)
+    predicted_price = model.predict(userResponse)
     return predicted_price[0]
 
-# Example usage of the function, erase the next "#" to put your input and the line after.
-#num_bedrooms_input = int(input("Enter the number of bedrooms: "))
-num_bedrooms_input = 5
-predicted_price = predict_price(num_bedrooms_input)
-print(f"Predicted price for {num_bedrooms_input} bedrooms: ${predicted_price/2:.2f}")
+
+bathrooms = input("Enter Number of bathroms: ")
+grade = input("Enter the grade of the home 1-13: ")
+waterfront = input("Enter if the home is in a waterfront (0 or 1): ")
+sqft_lot = input("Enter the square-footage of the lot (520-1650000): ")
+sqft_living = input("Enter the square-footage of living area (290-13500): ")
+long = input("Enter the longitude of the home: ")
+lat = input("Enter the lattitude of the home: ")
+bedrooms = input("Enter Number of bedrooms: ")
+predicted_price = predict_price(bathrooms, grade, waterfront, sqft_lot, sqft_living, long, lat, bedrooms)
+print(f"Predicted price for this Home is ${predicted_price/2:.2f}")
+# Seattle: Latitude 47.6062, Longitude -122.3321
+# Spokane: Latitude 47.6588, Longitude -117.4260
+# Tacoma: Latitude 47.2529, Longitude -122.4443
+# Vancouver: Latitude 45.6387, Longitude -122.6615
+# Bellevue: Latitude 47.6101, Longitude -122.2015
+# Everett: Latitude 47.9789, Longitude -122.2021
+# Kent: Latitude 47.3809, Longitude -122.2348
+# Renton: Latitude 47.4829, Longitude -122.2171
+# Federal Way: Latitude 47.3223, Longitude -122.3126
