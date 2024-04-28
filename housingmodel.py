@@ -79,7 +79,7 @@ def predict() -> None:
 def commands() -> None:
     cls()
     print("predict: Will begin a prediction query")
-    print("city_list: Will print a list of popular cities in Washington with latitude and logitude values.")
+    print("city_list: display a list of popular cities in Washington with latitude and logitude values.")
     print("commands: display a list of valid commands")
     print("heatmap: displays descriptvie heatmap of the data")
     print("distribution: displays descriptvie price distribution of the data")
@@ -91,11 +91,10 @@ def commands() -> None:
 
 def city_list() -> None:
     cls()
-    print("While The values displayed are from Washington\nThe values could be extrapolated to any valid latitude and longitude values")
+    print("While The values displayed are from Washington\nAny valid latitude and longitude could be used to extrapolate the prediction")
     print("Seattle: Latitude 47.60, Longitude -122.33")
     print("Spokane: Latitude 47.65, Longitude -117.42")
     print("Tacoma: Latitude 47.25, Longitude -122.44")
-    print("Vancouver: Latitude 45.63, Longitude -122.66")
     print("Bellevue: Latitude 47.61, Longitude -122.20")
     print("Everett: Latitude 47.97, Longitude -122.20")
     print("Kent: Latitude 47.38, Longitude -122.23")
@@ -142,7 +141,7 @@ while app_loop:
     if count == 0:
         print("Welcome to the Housing Prediction Model Terminal application")
         count += 1
-    user_input = input("To Start the model enter 'predict'\nFor a list of commands enter 'commands'\nTo Exit enter 'quit'\n")
+    user_input = input("To submit a prediction query enter 'predict'\nFor a list of commands enter 'commands'\nTo Exit enter 'quit'\n")
     match user_input:
         case "predict":
             predict()
