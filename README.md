@@ -100,7 +100,7 @@ _All python files and csv's should be in the same directory for this to work_
 
 run the application with the python command
 
-`python housingmodel.py'
+`python housingmodel.py`
 
 
 
