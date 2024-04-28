@@ -9,6 +9,9 @@ This project is a Terminal based application that could be run in the terminal o
 - log.csv
 
 ## Python Packages used
+
+_not all packages need to be installed directly as some are depencies and will install along with the main 4_
+
 Package         Version
 --------------- -----------
 - contourpy       1.2.0
