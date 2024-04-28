@@ -40,7 +40,7 @@ use link to download python from offical site https://www.python.org/downloads/
 
 __All commands should be run with adminstrator privelages__
 
-_Be sure to Download the python version that matches your OS and Processor type"
+_Be sure to Download the python version that matches your OS and Processor type_
 
 All installation will take place in the Terminal, Command Prompt, or PowerShell; Depending on the OS
 
