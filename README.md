@@ -2,6 +2,12 @@
 
 This project is a Terminal based application that could be run in the terminal or by double clicking the file icon so long as python is in the OS's PATH.
 
+## Files
+
+- housingmodel.py
+- Housing.csv
+- log.csv
+
 ## Python Packages used
 Package         Version
 --------------- -----------
@@ -88,12 +94,24 @@ On PowerShell run the following command
 
 `pip install -U scikit-learn`
 
+### Run the application
+
+_All python files and csv's should be in the same directory for this to work_
+
+run the application with the python command
+
+`python housingmodel.py'
+
 
 
 
 
 
 ## Data
+Data was sourced from Kaggle
+
+https://www.kaggle.com/datasets/sukhmandeepsinghbrar/housing-price-dataset
+
 The raw data set will contain the following columns:
 -	price (Housing price of recent listing or previously sold at price)
 -	bathrooms (Number of bathrooms)
