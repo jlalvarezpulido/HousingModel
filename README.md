@@ -29,8 +29,11 @@ Package         Version
 
 ## Installation
 ### Install latest version of python
+
 use link to download python from offical site https://www.python.org/downloads/
+
 __All commands should be run with adminstrator privelages__
+
 _Be sure to Download the python version that matches your OS and Processor type"
 
 All installation will take place in the Terminal, Command Prompt, or PowerShell; Depending on the OS
@@ -50,6 +53,7 @@ Install venv
 `pip install venv`
 
 #### Crete a virtual environment
+
 Create a virtual environment
 
 `python3 -m venv .venv`
@@ -103,14 +107,23 @@ The raw data set will contain the following columns:
 
 ## Commands
 
-predict: Will begin a prediction query
-city_list: display a list of popular cities in Washington with latitude and logitude values
-commands: display a list of valid commands
-heatmap: displays descriptvie heatmap of the data
-distribution: displays descriptvie price distribution of the data
-scatterplot: displays descriptvie scatter plot of the price vs sqft_living
-r2: displays the R-Squared value
-mae: displays the mean absolute error
+List of commands used in the application
+
+`predict` : Will begin a prediction query
+
+`city_list` : display a list of popular cities in Washington with latitude and logitude values
+
+`commands` : display a list of valid commands
+
+`heatmap` : displays descriptvie heatmap of the data
+
+`distribution` : displays descriptvie price distribution of the data
+
+`scatterplot` : displays descriptvie scatter plot of the price vs sqft_living
+
+`r2`: displays the R-Squared value
+
+`mae` : displays the mean absolute error
 
 ## Good Latitude and Longitude Test Values
 While The values displayed are from Washington\nAny valid latitude and longitude could be used to extrapolate the prediction.
