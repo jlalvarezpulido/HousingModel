@@ -1,0 +1,3 @@
+bathrooms,grade,waterfront,sqft_lot,sqft_living,lat,long,bedrooms,predicted_price
+1,1,0,3512.0,1223.0,45.55,-122.33,2,239373.98379811668
+2,3,0,2300.0,1190.0,47.6,-122.33,2,451085.760979665
