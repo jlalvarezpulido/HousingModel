@@ -5,27 +5,27 @@ This project is a Terminal based application that could be run in the terminal o
 ## Python Packages used
 Package         Version
 --------------- -----------
-contourpy       1.2.0
-cycler          0.12.1
-fonttools       4.50.0
-joblib          1.3.2
-kiwisolver      1.4.5
-matplotlib      3.8.3
-numpy           1.26.4
-packaging       24.0
-pandas          2.2.1
-pillow          10.2.0
-pip             22.0.2
-pyparsing       3.1.2
-python-dateutil 2.9.0.post0
-pytz            2024.1
-scikit-learn    1.4.1.post1
-scipy           1.13.0
-seaborn         0.13.2
-setuptools      59.6.0
-six             1.16.0
-threadpoolctl   3.4.0
-tzdata          2024.1
+- contourpy       1.2.0
+- cycler          0.12.1
+- fonttools       4.50.0
+- joblib          1.3.2
+- kiwisolver      1.4.5
+- matplotlib      3.8.3
+- numpy           1.26.4
+- packaging       24.0
+- pandas          2.2.1
+- pillow          10.2.0
+- pip             22.0.2
+- pyparsing       3.1.2
+- python-dateutil 2.9.0.post0
+- pytz            2024.1
+- scikit-learn    1.4.1.post1
+- scipy           1.13.0
+- seaborn         0.13.2
+- setuptools      59.6.0
+- six             1.16.0
+- threadpoolctl   3.4.0
+- tzdata          2024.1
 
 ## Installation
 ### Install latest version of python
@@ -38,20 +38,28 @@ All installation will take place in the Terminal, Command Prompt, or PowerShell;
 ### upgrade pip
 
 use command below to upgrade pip
+
 `pip3 install --upgrade pip`
+
 _pip is the standard package manager for Python_
 
 ### Create and activate a virtual environment
+
 Install venv
+
 `pip install venv`
 
 #### Crete a virtual environment
 Create a virtual environment
+
 `python3 -m venv .venv`
+
 _Be sure to create environemt on the same directory that the python files, and csv's located_
 
 #### On Linux or MacOS terminal
+
 On Unix like terminals use command below to activate environment
+
 `source .venv/bin/activate`
 
 #### On Windows
@@ -59,17 +67,21 @@ On Unix like terminals use command below to activate environment
 `cd .venv`
 
 On Command Prompt run the following command
+
 `venv\Scripts\activate.bat`
 
 On PowerShell run the following command
+
 `venv\Scripts\Activate.ps1`
 
 ### Install packages and Libraries
 
 `pip install pandas`
+
 `pip install matplotlib`
-`pip instal numpy`
+
 `pip install seaborn`
+
 `pip install -U scikit-learn`
 
 
