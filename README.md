@@ -57,16 +57,15 @@ _pip is the standard package manager for Python_
 
 ### Create and activate a virtual environment
 
-Install venv
-
-`pip install venv`
-
 #### Crete a virtual environment
-
 Create a virtual environment
+#### On Linux or MacOS terminal
 
 `python3 -m venv .venv`
 
+#### On Windows
+
+`py -m venv .venv`
 _Be sure to create environemt on the same directory that the python files, and csv's located_
 
 #### On Linux or MacOS terminal
