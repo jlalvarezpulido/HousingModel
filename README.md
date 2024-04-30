@@ -65,7 +65,8 @@ Create a virtual environment
 
 #### On Windows
 
-`py -m venv .venv`
+`python -m venv .venv`
+
 _Be sure to create environemt on the same directory that the python files, and csv's located_
 
 #### On Linux or MacOS terminal
