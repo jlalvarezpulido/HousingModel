@@ -142,6 +142,9 @@ def recent() -> None:
     cls()
     recent = pd.read_csv('log.csv')
     pd.set_option('display.max_rows', None)
+    format = recent['predicted_price'].apply(lambda x: "${:.2f}".format(x))
+    recent.drop('predicted_price', inplace=True, axis=1)
+    recent = pd.concat([recent, format], axis=1)
     print(recent)
     input('Press Enter to exit')
     cls()
@@ -152,6 +155,7 @@ count = 0
 
 while app_loop:
     if count == 0:
+        cls()
         print("Welcome to the Housing Prediction Model Terminal application")
         count += 1
     user_input = input("To submit a prediction query enter 'predict'\nFor a list of commands enter 'commands'\nTo Exit enter 'quit'\n")
@@ -163,6 +167,7 @@ while app_loop:
         case "commands":
             commands()
         case "quit":
+            cls()
             app_loop = False
         case "heatmap":
             heatmap()
