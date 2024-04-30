@@ -2,19 +2,22 @@ import os
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, r2_score
+from scipy import stats
 
 # Read the dataset
 df = pd.read_csv('Housing.csv')
+df = df[np.abs(stats.zscore(df["sqft_lot"])) < 3]
 df = df[["price", "bathrooms", "grade", "waterfront", "sqft_lot", "sqft_living", "lat", "long", "bedrooms"]]
 
 # Extracting features and target variable
 X = df[["bathrooms", "grade", "waterfront", "sqft_lot", "sqft_living", "lat", "long", "bedrooms"]]
 y = df["price"]
 # Splitting data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=16, test_size =0.3)
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=7, test_size =0.2)
 
 model = RandomForestRegressor(max_depth=6, random_state=0, n_estimators=10)
 model.fit(X_train, y_train)
