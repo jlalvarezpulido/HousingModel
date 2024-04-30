@@ -89,6 +89,7 @@ def commands() -> None:
     print("scatterplot: displays descriptvie scatter plot of the price vs sqft_living")
     print("r2: displays the R-Squared value")
     print("mae: displays the mean absolute error")
+    print("recent: displays saved queries")
     input("press enter to return")
 
 
@@ -137,6 +138,15 @@ def mae() -> None:
     print(f'\nThe mean absolute error is: ${mae_var:.2f}')
 
 
+def recent() -> None:
+    cls()
+    recent = pd.read_csv('log.csv')
+    pd.set_option('display.max_rows', None)
+    print(recent)
+    input('Press Enter to exit')
+    cls()
+
+
 app_loop = True
 count = 0
 
@@ -164,3 +174,5 @@ while app_loop:
             r2()
         case "mae":
             mae()
+        case "recent":
+            recent()
